@@ -1,7 +1,7 @@
 package com.tlai.comtroller;
 
 import com.service.DemoService;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.apache.dubbo.config.annotation.Reference;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -14,8 +14,10 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class TestController {
 
-    @Autowired
+    @Reference(version = "1.0.0", url = "dubbo://127.0.0.1:12345")
     private DemoService demoService;
+
+
 
     @RequestMapping(value = "/dubbo", method = RequestMethod.GET)
     public String test() {

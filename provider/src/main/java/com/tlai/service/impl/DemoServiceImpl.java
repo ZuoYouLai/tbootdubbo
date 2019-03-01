@@ -8,7 +8,8 @@ import org.apache.dubbo.config.annotation.Service;
  * @ Date       ：Created in 2019-02-21 14:47
  * @ Description：
  */
-@Service(version = "1.0.0")
+//@Service(version = "1.0.0")
+@Service
 public class DemoServiceImpl implements DemoService {
 
 
